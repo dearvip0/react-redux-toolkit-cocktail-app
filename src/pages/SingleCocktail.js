@@ -6,12 +6,12 @@ import { fetchSingleCocktail } from '../redux/features/cocktailSlice';
 const SingleCocktail = () => {
 	const { cocktail, loading } = useSelector((state) => ({ ...state.app }));
 	const [modifiedCocktail, setModifiedCocktail] = useState([]);
-	const dispatch = useDispatch();
 	const { id } = useParams();
+	const dispatch = useDispatch();
 
 	useEffect(() => {
 		dispatch(fetchSingleCocktail({ id }));
-	}, [id]);
+	}, [id, dispatch]);
 
 	useEffect(() => {
 		if (cocktail.length > 0) {
