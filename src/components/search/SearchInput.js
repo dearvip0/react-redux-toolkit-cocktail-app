@@ -15,11 +15,10 @@ const SearchInput = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		window.location.href = `/search/${searchValue.current.value}`;
 	};
 	return (
 		<section className='section search'>
-			<form className='search-form'>
+			<form onSubmit={handleSubmit} className='search-form'>
 				<div className='form-control'>
 					<label htmlFor='name'>Search Cocktail</label>
 					<input
