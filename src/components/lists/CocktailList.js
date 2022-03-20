@@ -9,7 +9,7 @@ const CocktailList = () => {
 
 	useEffect(() => {
 		dispatch(fetchCocktails());
-	}, []);
+	}, [dispatch]);
 
 	useEffect(() => {
 		if (cocktails) {
